@@ -4,5 +4,6 @@ export function toUserDto(row) {
         email: row.email,
         fullName: row.full_name,
         role: row.role,
+        ...(row.orders_count !== undefined && { ordersCount: row.orders_count, lastOrderAt: row.last_order_at }),
     };
 }

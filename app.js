@@ -7,6 +7,7 @@ dotenv.config();
 
 // import route here 
 import loginRouter from './auth/index.js';
+import registerRouter from './auth/register.js';
 import verifyRouter from './auth/verify.js';
 import usersRouter from './users/index.js';
 
@@ -23,6 +24,7 @@ export function createApp() {
     });
 
     app.use('/login', loginRouter);
+    app.use('/register', registerRouter);
     app.use('/auth', verifyRouter);
     app.use('/users', usersRouter);
 
